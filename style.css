@@ -1,0 +1,23 @@
+body{
+    width: 400px;
+}
+p.heading{
+    font-family: 'Asul', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: dashed;
+}
+div.neuro{
+    background: #ffffff;
+    box-shadow: inset 5px 5px 29px #e0e0e0, 
+            inset -5px -5px 29px #ffffff;
+
+    height: 400px;
+}
+button.custombtn{
+    background-color: #FF4500;
+    border-color: #FF4500;
+    color: #ffffff;
+}
+button.custombtn :hover{
+    color: #ffffff;
+}
