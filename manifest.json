@@ -1,16 +1,17 @@
 {
     "name" : "Dev-StopWatch",
     "version" : "1.0.0",
+    "description": "Stopwatch for some urls :)",
     "manifest_version" : 2,
 
     "content_scripts" : [
         {
-            "matches" : ["<all_urls>"],
-            "js" : ["content.js"] 
+            "matches" : ["*://*.stackoverflow.com/*"],
+            "js" : ["Dev-StopWatch/content.js"] 
         }
     ],
-
     "browser_action" : {
-        "default_popup" : "popup.html"
+        "default_icon": "Dev-StopWatch/images/icon128.png",
+        "default_popup": "Dev-StopWatch/popup.html"
     }
 }

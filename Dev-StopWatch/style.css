@@ -13,11 +13,19 @@ div.neuro{
 
     height: 400px;
 }
-button.custombtn{
+.custombtn1{
     background-color: #FF4500;
     border-color: #FF4500;
     color: #ffffff;
+    padding: 4px;
+    border-color: #FF4500;
+    border-radius: 5px;
 }
-button.custombtn :hover{
-    color: #ffffff;
+.custombtn2{
+    background-color: #ffffff;
+    color:#FF4500;
+    padding: 4px;
+    border-color: #ffffff;
+    border-radius: 5px;
+
 }
