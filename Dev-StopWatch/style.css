@@ -29,3 +29,13 @@ div.neuro{
     border-radius: 5px;
 
 }
+.github , .stackoverflow , .list{
+    font-family: 'Asul', sans-serif;
+    font-size: 18px;
+}
+
+button:active, 
+button:focus 
+{
+    border-color: #FF4500;
+ }

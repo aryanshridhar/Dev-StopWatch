@@ -1,11 +1,30 @@
+var reset = document.getElementById('reset');
+var stop = document.getElementById('stop');
+
 class Time{
 
     constructor(web , pressed){
 
         this.website = web;
         this.pressed = pressed;
+    }
 
-    }   
+    reset = () => {
+
+        var tag = document.getElementById(this.website);
+        var times = ['h' , 'm' , 's'];
+
+        for(let i=0 ; i<tag.children.length;i++)
+        {
+            tag.children[i].innerHTML = 0 + times[i] + " ";
+        }
+
+        this.pressed = false;
+    }
+
+    stop = () => {
+        this.pressed = false;
+    }
 
     showwatch(){
         
@@ -13,38 +32,43 @@ class Time{
         var minutes = 0;
         var hours = 0;
 
-        if (this.pressed){
-            
-            setInterval( () => {
+        reset.addEventListener('click' , this.reset);
+        stop.addEventListener('click' , this.stop);
 
-                    if(seconds >= 60){
-                        seconds = 0;
-                        minutes++;
+        var frames = setInterval( () => {
+                
+                if(seconds >= 60){
+                    seconds = 0;
+                    minutes++;
 
-                        if (minutes >= 60)
-                        {
-                            hours++;
-                            minutes = 0;
-                        }
+                    if (minutes >= 60)
+                    {
+                        hours++;
+                        minutes = 0;
                     }
-                    else{
-                        seconds++;
-                    }
+                }
+                else{
+                    seconds++;
+                }
 
-                    var web = document.getElementById(this.website);
+                var web = document.getElementById(this.website);
 
-                    console.log(web)
+                if (this.pressed){
 
                     web.children[0].innerHTML = hours + "h ";
                     web.children[1].innerHTML = minutes + "m ";
                     web.children[2].innerHTML = seconds + "s ";
-                    
-                }, 1000
-            )
-        }
+
+                }
+                else{
+
+                    clearInterval(frames)
+                }
+                
+            }, 1000
+        )
     }
 }
 
 new Time('github' , true).showwatch();
 new Time('stackoverflow' , true).showwatch();
-
